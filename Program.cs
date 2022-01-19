@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configure application dbcontext
+builder.Services.AddDbContext<ApplicationDbContext>(
+    opt => opt.UseInMemoryDatabase(databaseName: "in-memory-db")
+);
 
 // Serilog
 builder.Host.UseSerilog((ctx, lc) =>

@@ -6,3 +6,8 @@ public partial class ApplicationDbContext : DbContext
     {
     }
 }
+
+public partial class ApplicationDbContext
+{
+    public DbSet<TestModel> TestModels { get; set; } = null!;
+}
