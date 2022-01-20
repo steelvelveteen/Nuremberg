@@ -18,7 +18,7 @@ A complete .NETCore API training project
 -  **PostgresQL Setup** : Configure the connection string using the `appsettings.Development.json` file. 
 Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you will need to specify the connetion string to use as specified in `appsettings.Development.json` file.
 
-   > options => options.UseNpgsql(builder.Configuration.GetConnectionString("TestDb")));
+   > options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergDb")));
 
    Run `database ef database update`
 

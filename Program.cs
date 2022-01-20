@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 // Configure application dbcontext
 builder.Services.AddDbContext<ApplicationDbContext>(
     // options => options.UseSqlite(@"DataSource=test.db"));
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("TestDb")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergDb")));
 
 // Serilog
 builder.Host.UseSerilog((ctx, lc) =>
