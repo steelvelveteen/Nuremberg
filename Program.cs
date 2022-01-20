@@ -12,8 +12,8 @@ builder.Services.AddSwaggerGen();
 
 // Configure application dbcontext
 builder.Services.AddDbContext<ApplicationDbContext>(
-    // opt => opt.UseInMemoryDatabase(databaseName: "in-memory-db")
-    options => options.UseSqlite(@"DataSource=test.db"));
+    // options => options.UseSqlite(@"DataSource=test.db"));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("TestDb")));
 
 // Serilog
 builder.Host.UseSerilog((ctx, lc) =>

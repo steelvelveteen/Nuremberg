@@ -13,4 +13,12 @@ A complete .NETCore API training project
     > https://www.youtube.com/watch?v=nN9jOORIFtc&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=47
 
 - **First Migrations** : install `Microsoft.EntityFrameworkCore.Sqlit` (this time I used `dotnet add package <package>`). Modify the dbContext configuration in `Program.cs` file. Run `dotnet ef migrations add InitialCreate --output-dir Data/Migrations` and voila! this worked for me. Also, I had to add a `Guid Id` to the model because EFCore was complaining that I was lacking the primary key
+    > options => options.UseSqlite(@"DataSource=test.db"));
+
+-  **PostgresQL Setup** : Configure the connection string using the `appsettings.Development.json` file. 
+Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you will need to specify the connetion string to use as specified in `appsettings.Development.json` file.
+
+   > options => options.UseNpgsql(builder.Configuration.GetConnectionString("TestDb")));
+
+   Run `database ef database update`
 
