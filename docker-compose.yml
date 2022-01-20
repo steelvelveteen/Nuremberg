@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+ postgres:
+    image: postgis/postgis:latest
+    ports:
+      - "5433:5433"
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "loki74"
+      POSTGRES_DB: "NurembergDb"
+
+volumes:
+  db_volume:
