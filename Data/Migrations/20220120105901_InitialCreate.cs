@@ -13,9 +13,9 @@ namespace Nuremberg.Data.Migrations
                 name: "TestModels",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    TestModelName = table.Column<string>(type: "TEXT", nullable: false),
-                    TestModelOtherProp = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    TestModelName = table.Column<string>(type: "text", nullable: false),
+                    TestModelOtherProp = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
