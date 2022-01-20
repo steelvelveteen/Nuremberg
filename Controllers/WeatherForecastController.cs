@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Nuremberg.Models;
 
 namespace Nuremberg.Controllers;
 

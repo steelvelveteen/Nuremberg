@@ -1,4 +1,4 @@
-namespace Nuremberg;
+namespace Nuremberg.Models;
 
 public class WeatherForecast
 {
