@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Nuremberg.Models;
 
 public partial class ApplicationDbContext : DbContext
 {

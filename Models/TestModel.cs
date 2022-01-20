@@ -1,3 +1,4 @@
+namespace Nuremberg.Models;
 public class TestModel
 {
     public Guid Id { get; set; } = Guid.Empty;
