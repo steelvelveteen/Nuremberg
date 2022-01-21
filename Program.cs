@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Nurember.Data;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -14,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(
     // options => options.UseSqlite(@"DataSource=test.db"));
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergDb")));
+
 
 // Serilog
 builder.Host.UseSerilog((ctx, lc) =>
