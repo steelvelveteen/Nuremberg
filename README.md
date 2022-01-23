@@ -41,3 +41,5 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 
 8. **Postgresql in Docker container**: create a `docker-compose.yml` file and add the content as specified. Run `database ef database update` which will add the db to the postgres server running in the container. To view in PgAdmin create a new server with the required details: localhost, port 5433, disable SSH and database name and password. After running the dotnet ef command refresh pgAdmin and you should have the db in there :)
 
+9. **Seeding the database** To seed the `TestModels` table with some fake data we use the `override void OnModelCreating()` for this. Add some instances of the model and run a new migration: `dotnet ef migrations add SeedData` and then run `dotnet ef database update`. Verify the table has this data added to it.
+
