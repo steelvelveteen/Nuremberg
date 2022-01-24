@@ -45,3 +45,8 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 
 10. **Identity from EFCore** : add the nuget package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. The `ApplicationDbContext` must now extend the IdentityDbContext class instead of the DbContext class. This must be done for all partial ApplicationDbContext classes. Add the service in `Program.cs` file in the dbContext section : `builder.Services.AddIdentity<IdentityUser, IdentityRole>()`
 
+
+## What's next ##
+- Add unit testing framework XUnit
+- A new TestController
+- Research other project structure or layouts

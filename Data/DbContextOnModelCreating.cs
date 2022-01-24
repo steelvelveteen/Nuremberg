@@ -4,7 +4,7 @@ using Nuremberg.Models;
 
 namespace Nuremberg.Data;
 
-public partial class ApplicationDbContext : IdentityDbContext
+public partial class ApplicationDbContext : DbContext
 {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

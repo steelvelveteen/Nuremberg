@@ -2,7 +2,7 @@ version: "3.4"
 
 services:
  postgres:
-    image: postgis/postgis:latest
+    image: postgres:latest
     ports:
       - "5433:5433"
     restart: always
