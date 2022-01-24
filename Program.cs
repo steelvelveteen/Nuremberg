@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Nurember.Data;
+using Nuremberg.Data;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

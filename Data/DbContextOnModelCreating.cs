@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Nuremberg.Models;
 
-namespace Nurember.Data;
+namespace Nuremberg.Data;
 
 public partial class ApplicationDbContext : DbContext
 {

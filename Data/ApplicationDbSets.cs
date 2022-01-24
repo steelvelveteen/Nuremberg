@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Nuremberg.Models;
 
 namespace Nuremberg.Data;
+
 public partial class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-    }
+    public DbSet<TestModel> TestModels { get; set; } = null!;
 }

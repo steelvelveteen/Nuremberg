@@ -1,6 +1,6 @@
 using AutoMapper;
 
-namespace Nurember.Data;
+namespace Nuremberg.Data;
 
 public class AutoMapperProfile : Profile
 {

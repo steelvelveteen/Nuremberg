@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Nuremberg.Data;
 using Nuremberg.Models;
 
 namespace Nuremberg.Controllers;
