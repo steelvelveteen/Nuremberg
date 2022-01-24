@@ -43,3 +43,5 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 
 9. **Seeding the database** To seed the `TestModels` table with some fake data we use the `override void OnModelCreating()` for this. Add some instances of the model and run a new migration: `dotnet ef migrations add SeedData` and then run `dotnet ef database update`. Verify the table has this data added to it.
 
+10. **Identity from EFCore** : add the nuget package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. The `ApplicationDbContext` must now extend the IdentityDbContext class instead of the DbContext class. This must be done for all partial ApplicationDbContext classes. Add the service in `Program.cs` file in the dbContext section : `builder.Services.AddIdentity<IdentityUser, IdentityRole>()`
+

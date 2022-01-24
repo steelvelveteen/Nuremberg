@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Nuremberg.Models;
 
 namespace Nuremberg.Data;
 
-public partial class ApplicationDbContext : DbContext
+public partial class ApplicationDbContext : IdentityDbContext
 {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

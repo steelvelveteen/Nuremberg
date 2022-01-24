@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Nuremberg.Data;
 using Serilog;
@@ -16,6 +17,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(
     // options => options.UseSqlite(@"DataSource=test.db"));
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergDb")));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>();
 
 
 // Serilog
