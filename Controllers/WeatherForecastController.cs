@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Nuremberg.Data;
 using Nuremberg.Models;
 
@@ -33,12 +32,5 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
-    }
-
-    [HttpGet("GetTestsModels")]
-    public async Task<ActionResult<IEnumerable<TestModel>>> GetTestModelsAsync()
-    {
-        var result = await _dbContext.TestModels.ToListAsync();
-        return Ok(result);
     }
 }
