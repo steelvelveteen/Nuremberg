@@ -1,7 +1,23 @@
 version: "3.4"
 
+networks:
+  nuremberg_api-dev:
+    driver: bridge
+
 services:
- postgres:
+  nuremberg_api:
+    image: nuremberg:latest
+    depends_on:
+      - "postgres_database"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "8000:80"
+    environment:
+      DB_CONNECTION_STRING: "host=postgres_database;Database=NurembergDb;Port=5433;User Id=postgres;Password=loki74"
+
+  postgres_database:
     image: postgres:latest
     ports:
       - "5433:5433"

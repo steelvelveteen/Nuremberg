@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 // Configure application dbcontext
 builder.Services.AddDbContext<ApplicationDbContext>(
     // options => options.UseSqlite(@"DataSource=test.db"));
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergDb")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergConnectionString")));
 
 // builder.Services.AddIdentity<IdentityUser, IdentityRole>();
 

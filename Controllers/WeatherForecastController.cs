@@ -14,12 +14,10 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
-    private readonly ApplicationDbContext _dbContext;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger, ApplicationDbContext dbContext)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
-        _dbContext = dbContext;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
