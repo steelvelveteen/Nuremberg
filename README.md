@@ -47,6 +47,7 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 
 
 ## What's next ##
-- Add unit testing framework XUnit
+- Add ErrorHandlingMiddleware
+- Add unit testing framework XUnit - dotnet new xunit -o nuremberg.test for example
 - A new TestController
 - Research other project structure or layouts
