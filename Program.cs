@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Nuremberg;
 using Nuremberg.Data;
 using Serilog;
 
@@ -29,7 +30,7 @@ builder.Host.UseSerilog((ctx, lc) =>
 var app = builder.Build();
 
 // Middleware
-app.UseMiddleware<Nuremberg.ErrorHandlingMiddleware>();
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
