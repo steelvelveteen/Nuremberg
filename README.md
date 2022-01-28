@@ -45,7 +45,7 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 
 10. **Identity from EFCore** : add the nuget package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. The `ApplicationDbContext` must now extend the IdentityDbContext class instead of the DbContext class. This must be done for all partial ApplicationDbContext classes. Add the service in `Program.cs` file in the dbContext section : `builder.Services.AddIdentity<IdentityUser, IdentityRole>()`
 
-11. ** xUnit ** : in this project version I'll just add a directory to contain all the unit tests. To add the pacakge: `Ctrl+Shift+P` and search for the Nuget package xUnit.
+11. ** xUnit ** : for Version 2.0 only. Adding a separate project with `dotnet new xunit -o Nuremberg.Api.Tests`. 
 
 ## What's next ##
 - Add ErrorHandlingMiddleware
