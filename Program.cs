@@ -28,6 +28,9 @@ builder.Host.UseSerilog((ctx, lc) =>
 
 var app = builder.Build();
 
+// Middleware
+app.UseMiddleware<Nuremberg.ErrorHandlingMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
