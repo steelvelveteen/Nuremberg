@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Nuremberg.Data;
 public partial class ApplicationDbContext : DbContext

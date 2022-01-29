@@ -1,0 +1,190 @@
+﻿root = true
+
+# https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options
+
+# insert_final_newline=false
+
+[*.cs]
+
+dotnet_diagnostic.CS1998.severity = suggestion   # Async method lacks 'await' operators and will run synchronously
+dotnet_diagnostic.CS8632.severity = none         # The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+dotnet_diagnostic.CA2227.severity = suggestion   # Collection properties should be read only
+dotnet_diagnostic.CA2007.severity = suggestion   # Consider calling ConfigureAwait on the awaited task
+dotnet_diagnostic.CA1303.severity = suggestion   # Do not pass literals as localized parameter
+dotnet_diagnostic.CA2008.severity = suggestion   # Do not create tasks without passing a TaskScheduler
+dotnet_diagnostic.CA1062.severity = none         # Validate arguments of public methods
+dotnet_diagnostic.CA1031.severity = suggestion   # Do not catch general exception type
+dotnet_diagnostic.CA1056.severity = suggestion   # Uri properties should not be strings
+dotnet_diagnostic.CA1055.severity = suggestion   # Uri return values should not be strings
+dotnet_diagnostic.CA1054.severity = suggestion   # Uri parameters should not be strings
+
+# Avoid var
+csharp_style_var_for_built_in_types=false:suggestion
+csharp_style_var_when_type_is_apparent=true
+csharp_style_var_elsewhere=false:suggestion
+
+# Microsoft .NET properties
+csharp_new_line_before_members_in_object_initializers=false
+csharp_preferred_modifier_order=public, private, protected, internal, new, abstract, virtual, sealed, override, static, readonly, extern, unsafe, volatile, async:suggestion
+dotnet_naming_rule.private_constants_rule.severity=warning
+dotnet_naming_rule.private_constants_rule.style=upper_camel_case_style
+dotnet_naming_rule.private_constants_rule.symbols=private_constants_symbols
+dotnet_naming_rule.private_instance_fields_rule.severity=warning
+dotnet_naming_rule.private_instance_fields_rule.style=lower_camel_case_style
+dotnet_naming_rule.private_instance_fields_rule.symbols=private_instance_fields_symbols
+dotnet_naming_rule.private_static_fields_rule.severity=warning
+dotnet_naming_rule.private_static_fields_rule.style=lower_camel_case_style_1
+dotnet_naming_rule.private_static_fields_rule.symbols=private_static_fields_symbols
+dotnet_naming_rule.private_static_readonly_rule.severity=warning
+dotnet_naming_rule.private_static_readonly_rule.style=upper_camel_case_style
+dotnet_naming_rule.private_static_readonly_rule.symbols=private_static_readonly_symbols
+dotnet_naming_style.lower_camel_case_style.capitalization=camel_case
+dotnet_naming_style.lower_camel_case_style_1.capitalization=camel_case
+dotnet_naming_style.lower_camel_case_style_1.required_prefix=_
+dotnet_naming_style.upper_camel_case_style.capitalization=pascal_case
+dotnet_naming_symbols.private_constants_symbols.applicable_accessibilities=private
+dotnet_naming_symbols.private_constants_symbols.applicable_kinds=field
+dotnet_naming_symbols.private_constants_symbols.required_modifiers=const
+dotnet_naming_symbols.private_instance_fields_symbols.applicable_accessibilities=private
+dotnet_naming_symbols.private_instance_fields_symbols.applicable_kinds=field
+dotnet_naming_symbols.private_static_fields_symbols.applicable_accessibilities=private
+dotnet_naming_symbols.private_static_fields_symbols.applicable_kinds=field
+dotnet_naming_symbols.private_static_fields_symbols.required_modifiers=static
+dotnet_naming_symbols.private_static_readonly_symbols.applicable_accessibilities=private
+dotnet_naming_symbols.private_static_readonly_symbols.applicable_kinds=field
+dotnet_naming_symbols.private_static_readonly_symbols.required_modifiers=static,readonly
+dotnet_style_parentheses_in_arithmetic_binary_operators=never_if_unnecessary:none
+dotnet_style_parentheses_in_other_binary_operators=never_if_unnecessary:none
+dotnet_style_parentheses_in_relational_binary_operators=never_if_unnecessary:none
+dotnet_style_predefined_type_for_locals_parameters_members=true:suggestion
+dotnet_style_predefined_type_for_member_access=true:suggestion
+dotnet_style_qualification_for_event=false:suggestion
+dotnet_style_qualification_for_field=false:suggestion
+dotnet_style_qualification_for_method=false:suggestion
+dotnet_style_qualification_for_property=false:suggestion
+dotnet_style_require_accessibility_modifiers=for_non_interface_members:suggestion
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_wrap_arguments_style = chop_if_long
+
+# ReSharper properties
+resharper_autodetect_indent_settings=true
+resharper_use_indent_from_vs=false
+
+# ReSharper inspection severities
+resharper_arrange_redundant_parentheses_highlighting=hint
+resharper_arrange_this_qualifier_highlighting=hint
+resharper_arrange_type_member_modifiers_highlighting=hint
+resharper_arrange_type_modifiers_highlighting=hint
+resharper_built_in_type_reference_style_for_member_access_highlighting=hint
+resharper_built_in_type_reference_style_highlighting=hint
+resharper_redundant_base_qualifier_highlighting=warning
+resharper_suggest_var_or_type_built_in_types_highlighting=hint
+resharper_suggest_var_or_type_elsewhere_highlighting=hint
+resharper_suggest_var_or_type_simple_types_highlighting=hint
+resharper_web_config_module_not_resolved_highlighting=warning
+resharper_web_config_type_not_resolved_highlighting=warning
+resharper_web_config_wrong_module_highlighting=warning
+resharper_unused_import_clause_highlighting = warning
+
+# Documentation Rules (SA1600-) https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/1.1.118/documentation/DocumentationRules.md
+# We don't require code documentation, however, when we do add it, we want it to be valid.
+
+dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1601.severity = none
+dotnet_diagnostic.SA1602.severity = none
+dotnet_diagnostic.SA1603.severity = warning
+dotnet_diagnostic.SA1604.severity = none
+dotnet_diagnostic.SA1605.severity = none
+dotnet_diagnostic.SA1606.severity = warning
+dotnet_diagnostic.SA1607.severity = warning
+dotnet_diagnostic.SA1608.severity = none
+dotnet_diagnostic.SA1609.severity = none
+dotnet_diagnostic.SA1610.severity = none
+dotnet_diagnostic.SA1611.severity = none
+dotnet_diagnostic.SA1612.severity = warning
+dotnet_diagnostic.SA1613.severity = warning
+dotnet_diagnostic.SA1614.severity = suggestion # Element parameter documentation should have text
+dotnet_diagnostic.SA1615.severity = none
+dotnet_diagnostic.SA1616.severity = warning
+dotnet_diagnostic.SA1617.severity = warning
+dotnet_diagnostic.SA1618.severity = none
+dotnet_diagnostic.SA1619.severity = none
+dotnet_diagnostic.SA1620.severity = warning
+dotnet_diagnostic.SA1621.severity = warning
+dotnet_diagnostic.SA1622.severity = warning
+dotnet_diagnostic.SA1623.severity = none
+dotnet_diagnostic.SA1624.severity = none
+dotnet_diagnostic.SA1625.severity = none
+dotnet_diagnostic.SA1626.severity = none
+dotnet_diagnostic.SA1627.severity = warning
+dotnet_diagnostic.SA1628.severity = warning
+dotnet_diagnostic.SA1629.severity = suggestion # Documentation text should end with a period
+dotnet_diagnostic.SA1630.severity = none
+dotnet_diagnostic.SA1631.severity = none
+dotnet_diagnostic.SA1632.severity = none
+dotnet_diagnostic.SA1633.severity = none
+dotnet_diagnostic.SA1634.severity = none
+dotnet_diagnostic.SA1635.severity = none
+dotnet_diagnostic.SA1636.severity = none
+dotnet_diagnostic.SA1637.severity = none
+dotnet_diagnostic.SA1638.severity = none
+dotnet_diagnostic.SA1639.severity = none
+dotnet_diagnostic.SA1640.severity = none
+dotnet_diagnostic.SA1641.severity = none
+dotnet_diagnostic.SA1642.severity = none
+dotnet_diagnostic.SA1643.severity = none
+dotnet_diagnostic.SA1644.severity = none
+dotnet_diagnostic.SA1645.severity = none
+dotnet_diagnostic.SA1646.severity = none
+dotnet_diagnostic.SA1647.severity = none
+dotnet_diagnostic.SA1648.severity = none
+dotnet_diagnostic.SA1649.severity = none
+dotnet_diagnostic.SA1650.severity = none
+dotnet_diagnostic.SA1651.severity = none
+dotnet_diagnostic.SA1652.severity = none
+dotnet_diagnostic.SA1122.severity = suggestion  # Use string.Empty for empty strings
+dotnet_diagnostic.SA1402.severity = suggestion  # File may only contain a single type
+dotnet_diagnostic.SA1515.severity = suggestion  # Single-line comment should be preceded by blank line
+dotnet_diagnostic.SA1516.severity = suggestion  # Elements should be separated by blank line
+dotnet_diagnostic.SA1502.severity = suggestion  # Element should not be on a single line
+dotnet_diagnostic.SA1202.severity = suggestion  # Elements should be ordered by access
+dotnet_diagnostic.SA1011.severity = none        # Triggers false positive. Closing square brace should be followed by a space
+dotnet_diagnostic.SA1210.severity = suggestion  # Usings in alphabetical order
+dotnet_diagnostic.SA1208.severity = suggestion  # System Usings before other usings
+dotnet_diagnostic.SA1108.severity = none        # Block statements should not contain embedded comments
+dotnet_diagnostic.SA1401.severity = suggestion  # Fields should be private
+dotnet_diagnostic.SA1116.severity = suggestion  # Split parameters should start on line after declaration
+dotnet_diagnostic.SA1201.severity = suggestion  # Elements should appear in the correct order
+dotnet_diagnostic.SA1204.severity = suggestion  # Static members should appear before non-static members
+dotnet_diagnostic.SA1124.severity = none        # Do not use regions
+dotnet_diagnostic.SA1200.severity = none        # Using directives should be placed correctly. Not applicable to our use case.
+dotnet_diagnostic.SA1101.severity = none        # Prefix local calls with this.
+dotnet_diagnostic.SA1413.severity = none        # Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1118.severity = none        # Parameter should not span multiple lines
+dotnet_diagnostic.SA1503.severity = none        # Braces should not be omitted
+dotnet_diagnostic.SA1512.severity = none        # Single-line comments should not be followed by blank line
+dotnet_diagnostic.SA1009.severity = none        # ClosingParenthesisMustBeSpacedCorrectly. Makes null forgiving operator look better when this is disabled.
+
+[*]
+charset=utf-8-bom
+end_of_line=lf
+trim_trailing_whitespace=false
+insert_final_newline=false
+indent_style=space
+indent_size=4
+
+[/Volanta.Api/Data/Migrations/*]
+csharp_style_namespace_declarations = unset # migrations aren't generated with file scoped namespaces https://github.com/dotnet/efcore/issues/25223
+
+[{*.har,*.inputactions,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.stylelintrc,bowerrc,jest.config}]
+indent_style=space
+indent_size=2
+
+[{*.yaml,*.yml}]
+indent_style=space
+indent_size=2
+
+[*.{appxmanifest,asax,ascx,aspx,build,cg,cginc,compute,cs,cshtml,dtd,fs,fsi,fsscript,fsx,hlsl,hlsli,hlslinc,master,ml,mli,nuspec,razor,resw,resx,shader,skin,usf,ush,vb,xaml,xamlx,xoml,xsd}]
+indent_style=space
+indent_size=4
+tab_width=4

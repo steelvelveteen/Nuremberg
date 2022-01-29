@@ -1,6 +1,9 @@
 # Nuremberg
 A complete .NETCore API training project
 
+### `dotnet-format Nuremberg.sln`
+- To install formatter: `dotnet tool install --global dotnet-format`
+
 ## The full Architecture set up and installation process
 - **AutoMapper** :  Let's start small by installling AutoMapper. We do this by opening the command pallette `Ctrl+Shift+P` and type in `nuget add` and then type in `Automapper.` From the dropdown list just select `AutoMapper`. Additionally, install the `AutoMapper.Extensions.Microsoft.DependencyInjection`. In the `Program.cs` you will need to inject the service: `builder.Services.AddAutoMapper(typeof(AutoMapperProfile));`. The Profile file you will have to manually create yourself. The Data folder would be a nice place to put the file.
 
