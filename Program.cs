@@ -20,6 +20,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergConnectionString")));
 
 // builder.Services.AddIdentity<IdentityUser, IdentityRole>();
+// Configure caching
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("RedisConnectionString");
+    options.InstanceName = "Nuremberg";
+});
 
 
 // Serilog

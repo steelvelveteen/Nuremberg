@@ -1,5 +1,5 @@
 # Nuremberg
-A complete .NETCore API training project
+## A complete .NETCore API training project
 
 ### `dotnet-format Nuremberg.sln`
 - To install formatter: `dotnet tool install --global dotnet-format`
@@ -48,10 +48,10 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 
 10. **Identity from EFCore** : add the nuget package `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. The `ApplicationDbContext` must now extend the IdentityDbContext class instead of the DbContext class. This must be done for all partial ApplicationDbContext classes. Add the service in `Program.cs` file in the dbContext section : `builder.Services.AddIdentity<IdentityUser, IdentityRole>()`
 
-11. ** xUnit ** : for Version 2.0 only. Adding a separate project with `dotnet new xunit -o Nuremberg.Api.Tests`. 
+11. **xUnit** : for Version 2.0 only. Adding a separate project with `dotnet new xunit -o Nuremberg.Api.Tests`. 
+
+12. **Redis caching** : Read the dedicated document / tutorial for this part.
 
 ## What's next ##
 - Add ErrorHandlingMiddleware
-- Redis caching : watch Chapras and Tim tutorials
-- Add unit testing framework XUnit - dotnet new xunit -o nuremberg.test for example
 - Research other project structure or layouts
