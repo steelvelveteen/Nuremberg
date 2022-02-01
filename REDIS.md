@@ -5,10 +5,11 @@
 
    > https://www.youtube.com/watch?v=UrQWii_kfIE&t=186s
 
-1. Start by running `docker run --name my-cache-server -p 5002:6379 -d redis`. 
+1. Start by running `docker run --name my-cache-server -p 6379:6379 -d redis`. 
 
     **Note: Redis operates on 6379 by default**
-2. Run `dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis`
+2. Run 
+    > `dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis`
 
 3. Go to `Program.cs` file where you configure your services. Add our caching information to the Dependency Injection system: `builder.Services.AddStackExchangeRedisCache(options => {});`
 

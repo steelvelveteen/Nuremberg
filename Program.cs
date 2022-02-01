@@ -23,7 +23,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 // Configure caching
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = builder.Configuration.GetConnectionString("RedisConnectionString");
+    // options.Configuration = builder.Configuration.GetConnectionString("RedisConnectionString");
+    // options.InstanceName = "Nuremberg";
+    options.Configuration = $"{builder.Configuration.GetValue<string>("Redis:Server")}:{builder.Configuration.GetValue<int>("Redis:Port")}";
     options.InstanceName = "Nuremberg";
 });
 
