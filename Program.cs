@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Nuremberg;
 using Nuremberg.Data;
+using Nuremberg.Interfaces;
+using Nuremberg.Services;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("NurembergConnectionString")));
 
 // builder.Services.AddIdentity<IdentityUser, IdentityRole>();
+
+// Interfaces - Services
+builder.Services.AddSingleton<ICacheService, CacheService>();
+
+
+
 // Configure caching
 builder.Services.AddStackExchangeRedisCache(options =>
 {
