@@ -1,17 +1,21 @@
-# Get base SDK Image from Microsoft
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal AS base
 WORKDIR /app
+EXPOSE 80
 
-# Copy the csproj file and restore any dependencies (via NUGET)
-COPY *.csproj ./
-RUN dotnet restore
+ENV ASPNETCORE_URLS=http://+:80
 
-# Copy the project files and build our release
-COPY . ./
-RUN dotnet publish -c Release -o out
+FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
+WORKDIR /src
+COPY ["Nuremberg.csproj", "./"]
+RUN dotnet restore "Nuremberg.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "Nuremberg.csproj" -c Release -o /app/build
 
-# Generate runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM build AS publish
+RUN dotnet publish "Nuremberg.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
 WORKDIR /app
-COPY --from=build-env /app/out .
-ENTRYPOINT [ "dotnet","Nuremberg.dll" ]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Nuremberg.dll"]
