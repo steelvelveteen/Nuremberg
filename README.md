@@ -55,3 +55,5 @@ Install `Npgsql.EntityFrameworkCore.PostgreSQL` package. In `Program.cs` you wil
 ## What's next ##
 - Add ErrorHandlingMiddleware
 - Research other project structure or layouts
+
+Just testing a merge to master to trigger Azure pipeline
